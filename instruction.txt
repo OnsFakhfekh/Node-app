@@ -1,0 +1,19 @@
+1)
+(app-node)docker build app-node .
+docker images
+2)
+(app-node)docker run sha256:15f2c13069188c22ee626e1f8b38993d66b1ede5d3e2c4b4e659693bfd881833
+docker ps -a
+3)
+(app-node)docker run -p 3005:3000 --name c1-node 15f2c1306918
+(other-bash)docker stop c1-node
+(app-node)docker start c1-node
+
+4)
+(app-python)/(app-node)  docker container prune
+(app-python)/(app-node) docker image prune
+5)
+(app-node)docker build -t app-node:15 .
+6)
+ (app-node)docker run  -p 3001:3000 --rm --name cont2-node app-node
+ 
